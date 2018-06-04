@@ -2,6 +2,7 @@ import './NewsPanel.css';
 import _ from 'lodash';
 import Auth from '../Auth/Auth';
 import React from 'react';
+import StackGrid from "react-stack-grid"
 
 import NewsCard from '../NewsCard/NewsCard'
 
@@ -55,18 +56,21 @@ class NewsPanel extends React.Component{
     renderNews() {
         let news_list = this.state.news.map(function(news) {
             return(
-                <a className='list-group-item' href="#">
+                <a className='list-group-item' key={news.digest} href="#">
                     <NewsCard news={news} />
                 </a>
             );
         });
 
         return(
-            <div className="container-fluid">
-                <div className='list-group'>
+          <StackGrid  columnWidth={370}
+                  gutterWidth={8}
+                  gutterHeight={10}
+          >
+
                     {news_list}
-                </div>
-            </div>
+
+           </StackGrid>
         );
     }
 

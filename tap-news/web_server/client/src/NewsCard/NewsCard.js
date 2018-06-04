@@ -31,7 +31,7 @@ class NewsCard extends React.Component{
           <div className="col s8">
             <div className="news-intro-col">
               <div className="news-intro-panel">
-                <h4>{this.props.news.title}</h4>
+                <h5>{this.props.news.title}</h5>
                 <div className="news-description">
                   <p>{this.props.news.description}</p>
                   <div>
