@@ -28,10 +28,9 @@ class LoginPage extends React.Component{
 
     console.log('email:',email);
     console.log('password:',password);
-
-    fetch('http://localhost:3000/auth/login',{
+    const url = 'http://' + window.location.hostname + ':3000' + '/auth/login';
+    fetch(url,{
       method:'POST',
-      cache:false,
       headers:{
         'Accept':'application/json',
         'Content-Type':'application/json',

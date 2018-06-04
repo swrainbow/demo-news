@@ -38,10 +38,10 @@ class SignUpPage extends React.Component {
       return;
     }
 
+    const url = 'http://' + window.location.hostname + ':3000' + '/auth/signup';
     // Post registeration data
-    fetch('http://localhost:3000/auth/signup', {
+    fetch(url, {
       method: 'POST',
-      cache: false,
       headers: {
         'Accept': 'application/json',
         'Content-Type': 'application/json'

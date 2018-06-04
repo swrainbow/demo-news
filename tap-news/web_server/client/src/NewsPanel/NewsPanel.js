@@ -30,13 +30,14 @@ class NewsPanel extends React.Component{
       if(this.state.loadedAll===true){
         return;
       }
-      let url = 'http://localhost:3000/news/userId/'+Auth.getEmail()+'/pageNum/'+this.state.pageNum;
+      const url = 'http://' + window.location.hostname + ':3000' +
+          '/news/userId/' + Auth.getEmail() + '/pageNum/' + this.state.pageNum;
         let request = new Request(encodeURI(url), {
             method: 'GET',
             headers: {
               'Authorization': 'bearer ' + Auth.getToken(),
-            },
-            cache: false});
+            }
+          });
 
         fetch(request)
             .then((res) => res.json())
